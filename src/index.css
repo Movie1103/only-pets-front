@@ -2,3 +2,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .inputbox {
+    @apply border border-zinc-400 rounded-xl py-0.5;
+  }
+  .button-submit {
+    @apply bg-orange rounded-lg p-1 py-1.5 text-white text-sm;
+  }
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 1.15px;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+h4 {
+  font-size: 21px;
+  font-weight: 400;
+}
+p {
+  font-size: 16px;
+}
