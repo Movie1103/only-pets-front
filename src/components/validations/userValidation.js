@@ -32,4 +32,22 @@ const loginSchema = yup.object().shape({
     .required('Password is required.'),
 });
 
-export { userSchema, loginSchema };
+const addServiceSchema = yup.object().shape({
+  title: yup.string().required('Title is required.'),
+  openAt: yup.string().required('Opening time is required.'),
+  closeAt: yup.string().required('Closing time is required.'),
+  phoneNumber: yup.string().required('Phone number is required.'),
+  grooming: yup.boolean().required(),
+  shop: yup.boolean().required(),
+  hospital: yup.boolean().required(),
+  hotel: yup.boolean().required(),
+  addressTitle: yup.string().required('Title is required.'),
+  subDistrict: yup.string().required('Sub-district is required.'),
+  district: yup.string().required('District is required.'),
+  province: yup.string().required('Province is required.'),
+  zipcode: yup.string().required('Zip code is required.'),
+  latitude: yup.string().required('Latitude is required.'),
+  longitude: yup.string().required('Longitude is required.'),
+});
+
+export { userSchema, loginSchema, addServiceSchema };

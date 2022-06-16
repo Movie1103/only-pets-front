@@ -11,7 +11,7 @@ export default function Modal({ children, visible, onClose }) {
       onClick={handleOnClose}
     >
       <div
-        className="flex flex-col gap-5 justify-center bg-white p-14 rounded-xl"
+        className="flex flex-col gap-5 justify-center bg-white p-14 rounded-xl overflow-auto"
         onClick={e => e.stopPropagation()}
       >
         {children}

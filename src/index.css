@@ -5,10 +5,28 @@
 
 @layer components {
   .inputbox {
-    @apply border border-zinc-400 rounded-xl py-0.5;
+    @apply border border-zinc-400 rounded-xl py-1.5 px-4;
+  }
+  .input-time {
+    @apply border border-zinc-400 rounded-xl py-[6px] px-2;
   }
   .button-submit {
-    @apply bg-orange rounded-lg p-1 py-1.5 text-white text-sm;
+    @apply flex justify-center items-center bg-orange rounded-lg p-1 py-1.5 text-white text-sm;
+  }
+  .button-cancel {
+    @apply flex justify-center items-center border border-solid border-gray rounded-lg p-1 py-1.5 text-black text-sm;
+  }
+  .button-add {
+    @apply bg-purple rounded-lg py-1.5 text-white text-sm;
+  }
+  .button-select {
+    @apply bg-blue rounded-full py-1 px-2.5 text-white text-sm;
+  }
+  .button-unselect {
+    @apply bg-stone-200 hover:bg-blue hover:bg-opacity-40 rounded-full py-1 px-2.5 text-neutral-600 text-sm;
+  }
+  .custom-modal {
+    @apply overflow-y-auto overflow-x-hidden max-h-[60vh] scroll-smooth;
   }
 }
 

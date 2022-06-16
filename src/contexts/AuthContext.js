@@ -1,5 +1,12 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getMe } from '../api/user';
 import axios from '../config/axios';
 import {
   getAccessToken,
@@ -13,19 +20,19 @@ function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchMe = async () => {
-      try {
-        const token = getAccessToken();
-        if (token) {
-          const resMe = await axios.get('/users/me');
-          setUser(resMe.data.user);
-        }
-      } catch (err) {
-        removeAccessToken();
-        navigate('/login');
+  const fetchMe = useCallback(async () => {
+    try {
+      const token = getAccessToken();
+      if (token) {
+        const resMe = await getMe();
+        setUser(resMe.data.user);
       }
-    };
+    } catch (err) {
+      removeAccessToken();
+      navigate('/login');
+    }
+  }, []);
+  useEffect(() => {
     fetchMe();
   }, []);
 
@@ -50,7 +57,7 @@ function AuthContextProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ register, login, logout, user }}>
+    <AuthContext.Provider value={{ register, login, logout, user, fetchMe }}>
       {children}
     </AuthContext.Provider>
   );

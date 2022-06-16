@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../../contexts/AuthContext';
+import { useModal } from '../../../contexts/ModalContext';
 import LoginForm from '../../auth/LoginForm';
 import RegisterForm from '../../auth/RegisterForm';
 import Logo from './Logo';
@@ -7,12 +8,12 @@ import Menu from './Menu';
 import ProfileIcon from './ProfileIcon';
 
 function Header({ show, setShow }) {
-  const [showModal, setShowModal] = useState(false);
   const [loginOrRegister, setLoginOrRegister] = useState('login');
   const { user } = useAuth();
+  const { showModal, openModal, closeModal } = useModal();
 
   const handleOnClose = () => {
-    setShowModal(false);
+    closeModal();
     setLoginOrRegister('login');
   };
   const toggleRegister = () => {
@@ -39,7 +40,7 @@ function Header({ show, setShow }) {
               <div className="flex items-center gap-7">
                 <button
                   className="bg-white w-10 h-10 rounded-full"
-                  onClick={() => setShowModal(true)}
+                  onClick={() => openModal()}
                 >
                   <i className="fa-solid fa-user text-orange text-2xl"></i>
                 </button>
