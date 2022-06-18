@@ -3,9 +3,9 @@ import MenuList from '../profile/MenuList';
 
 function Sidebar() {
   return (
-    <div className="flex">
+    <div className="grid grid-cols-7">
       <MenuList />
-      <div className="flex mt-32 ml-32">
+      <div className="col-span-6 max-w-screen-2xl m-20">
         <Outlet />
       </div>
     </div>

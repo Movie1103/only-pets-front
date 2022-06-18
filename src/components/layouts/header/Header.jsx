@@ -25,7 +25,7 @@ function Header({ show, setShow }) {
 
   return (
     <>
-      <div className="py-1 bg-orange text-white hover:text-gray-700 focus:text-gray-700">
+      <div className="sticky top-0 z-50 w-full py-1 bg-orange text-white hover:text-gray-700 focus:text-gray-700 shadow-md">
         <div className="flex items-center justify-between px-32">
           <div className="flex justify-between items-center gap-40">
             <Logo />

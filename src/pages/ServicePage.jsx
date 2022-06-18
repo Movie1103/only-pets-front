@@ -1,7 +1,11 @@
+import ServiceContainer from '../components/layouts/service/ServiceContainer';
+import ServiceNavbar from '../components/layouts/service/ServiceNavbar';
+
 function ServicePage() {
   return (
     <div>
-      <h1>ServicePage</h1>
+      <ServiceNavbar />
+      <ServiceContainer />
     </div>
   );
 }

@@ -5,7 +5,7 @@
 
 @layer components {
   .inputbox {
-    @apply border border-zinc-400 rounded-xl py-1.5 px-4;
+    @apply border border-zinc-400 rounded-full py-1.5 px-4;
   }
   .input-time {
     @apply border border-zinc-400 rounded-xl py-[6px] px-2;
@@ -53,6 +53,10 @@ h3 {
 }
 h4 {
   font-size: 21px;
+  font-weight: 400;
+}
+h5 {
+  font-size: 18px;
   font-weight: 400;
 }
 p {

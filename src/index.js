@@ -6,13 +6,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import AuthContextProvider from './contexts/AuthContext';
+import CategoryContextProvider from './contexts/CategoryContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
-        <App />
+        <CategoryContextProvider>
+          <App />
+        </CategoryContextProvider>
       </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -17,7 +17,7 @@ function Me() {
 
   return (
     <>
-      <div className="flex items-center gap-12">
+      <div className="flex items-center gap-12 -z-10 max-w-screen-lg">
         <button
           className="relative"
           onMouseOver={handleMouseOver}
@@ -25,8 +25,8 @@ function Me() {
         >
           {isHovering && (
             <>
-              <div className="absolute bg-black opacity-20 z-10 w-full h-full rounded-full"></div>
-              <div className="absolute w-full mx-auto bottom-3 z-20 text-white">
+              <div className="absolute bg-black opacity-20 w-full h-full rounded-full"></div>
+              <div className="absolute w-full mx-auto bottom-3 z-10 text-white">
                 <p className="flex justify-center text-lg">edit</p>
               </div>
             </>
@@ -37,11 +37,6 @@ function Me() {
           {user?.firstName} {user?.lastName}
         </h1>
       </div>
-      <h3>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-        consequatur est autem laborum repudiandae soluta fugiat accusantium
-        deserunt perferendis voluptatem.
-      </h3>
     </>
   );
 }
