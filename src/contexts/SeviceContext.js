@@ -5,7 +5,12 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { getAllServices, getUserServices } from '../api/service';
+import {
+  deleteServiceById,
+  getAllServices,
+  getUserServices,
+  updateUserService,
+} from '../api/service';
 import { useAuth } from '../contexts/AuthContext';
 
 const ServiceContext = createContext();
@@ -26,26 +31,45 @@ function ServiceContextProvider({ children }) {
   }, []);
   const fetchUserServices = useCallback(async () => {
     try {
-      const res = await getUserServices(user?.id);
+      const res = await getUserServices();
+      console.log(res.data);
       setUserServices(res.data.services);
     } catch (err) {
       console.log(err);
     }
   }, []);
+  const updateService = async (serviceId, formData) => {
+    try {
+      await updateUserService(serviceId, formData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const deleteService = async serviceId => {
+    try {
+      await deleteServiceById(serviceId);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     fetchAllServices();
-  }, []);
-
-  useEffect(() => {
     if (user) {
       fetchUserServices();
     }
-  }, [user]);
+  }, []);
 
   return (
     <ServiceContext.Provider
-      value={{ allServices, userServices, fetchAllServices, fetchUserServices }}
+      value={{
+        allServices,
+        userServices,
+        fetchAllServices,
+        fetchUserServices,
+        updateService,
+        deleteService,
+      }}
     >
       {children}
     </ServiceContext.Provider>

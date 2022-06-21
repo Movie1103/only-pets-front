@@ -33,7 +33,11 @@ function Header({ show, setShow }) {
           </div>
           {user ? (
             <div className="flex items-center">
-              <ProfileIcon show={show} setShow={setShow} />
+              <ProfileIcon
+                show={show}
+                setShow={setShow}
+                src={user?.profilePic}
+              />
             </div>
           ) : (
             <>

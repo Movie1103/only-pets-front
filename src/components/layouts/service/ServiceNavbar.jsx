@@ -11,6 +11,7 @@ function ServiceNavbar() {
     toggleHospital,
     toggleHotel,
   } = useCategory();
+
   return (
     <>
       <div className="sticky top-[68px] z-40 w-full py-3 shadow-md bg-white">
@@ -24,8 +25,6 @@ function ServiceNavbar() {
                   : 'border border-neutral-400'
               }`}
               onClick={() => toggleGrooming()}
-              checked={isGrooming}
-              defaultChecked={isGrooming}
             >
               Grooming
             </button>
@@ -36,8 +35,6 @@ function ServiceNavbar() {
                   : 'border border-neutral-400'
               }`}
               onClick={() => toggleShop()}
-              checked={isShop}
-              defaultChecked={isShop}
             >
               Shop
             </button>
@@ -48,8 +45,6 @@ function ServiceNavbar() {
                   : 'border border-neutral-400'
               }`}
               onClick={() => toggleHospital()}
-              checked={isHospital}
-              defaultChecked={isHospital}
             >
               Hospital
             </button>
@@ -60,8 +55,6 @@ function ServiceNavbar() {
                   : 'border border-neutral-400'
               }`}
               onClick={() => toggleHotel()}
-              checked={isHotel}
-              defaultChecked={isHotel}
             >
               Hotel
             </button>

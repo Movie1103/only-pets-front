@@ -49,7 +49,7 @@ function LoginForm({ showModal, onClose, toggleRegister }) {
             <input
               type="password"
               id="password"
-              className="inputbox px-4 py-1.5"
+              className="inputbox px-4 py-1.5 tracking-widest"
               value={password}
               onChange={e => setPassword(e.target.value)}
             />

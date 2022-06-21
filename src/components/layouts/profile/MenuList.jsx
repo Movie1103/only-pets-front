@@ -9,23 +9,20 @@ function MenuList() {
   const { showModal, openModal, closeModal } = useModal();
 
   return (
-    <div className="bg-stone-200 h-screen">
-      <div className="fixed flex flex-col gap-5 m-10 min-w-[8%]">
-        <div className="flex justify-start">
-          <button>
-            <i className="fa-solid fa-arrow-left"></i>
-          </button>
-        </div>
+    <div className="sticky top-10 bg-stone-200 h-screen">
+      <div className="sticky top-28 flex flex-col gap-5 m-8">
         <h3 className="font-medium">Profile</h3>
         <Link to={`/profile/${user?.id}`} className="flex flex-col gap-3">
-          <div className="py-2 px-6 bg-white rounded-xl">Me</div>
+          <div className="py-2 px-4 bg-white rounded-xl">Me</div>
         </Link>
         {user?.role === 'admin' && (
           <Link
             to={`/profile/${user?.id}/services`}
             className="flex flex-col gap-3"
           >
-            <div className="py-2 px-6 bg-white rounded-xl">My Services</div>
+            <div className="flex py-2 px-4 bg-white rounded-xl">
+              My Services
+            </div>
           </Link>
         )}
         <button
@@ -34,8 +31,8 @@ function MenuList() {
         >
           Add Service
         </button>
-        <AddService showModal={showModal} closeModal={closeModal} />
       </div>
+      <AddService showModal={showModal} closeModal={closeModal} />
     </div>
   );
 }

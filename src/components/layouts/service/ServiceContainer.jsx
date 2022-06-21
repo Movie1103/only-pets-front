@@ -16,7 +16,7 @@ function ServiceContainer() {
   // console.log(services);
   return (
     <div className="grid grid-cols-4 col-span-4 gap-10 max-w-screen-lg m-16 mx-auto">
-      {services.map(el => (
+      {services?.map(el => (
         <ServiceCard
           key={el.id}
           id={el.id}
@@ -24,6 +24,8 @@ function ServiceContainer() {
           src={el.coverPhoto}
           category={el.category}
           phoneNumber={el.phoneNumber}
+          open={el.openAt}
+          close={el.closeAt}
           ratings={el.ratings}
         />
       ))}

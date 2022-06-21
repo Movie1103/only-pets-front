@@ -11,13 +11,19 @@
     @apply border border-zinc-400 rounded-xl py-[6px] px-2;
   }
   .button-submit {
-    @apply flex justify-center items-center bg-orange rounded-lg p-1 py-1.5 text-white text-sm;
+    @apply flex justify-center items-center bg-orange rounded-full p-1 py-1.5 text-white text-sm;
   }
   .button-cancel {
-    @apply flex justify-center items-center border border-solid border-gray rounded-lg p-1 py-1.5 text-black text-sm;
+    @apply flex justify-center items-center border border-solid border-gray rounded-full p-1 py-1.5 text-black text-sm;
   }
   .button-add {
-    @apply bg-purple rounded-lg py-1.5 text-white text-sm;
+    @apply bg-purple rounded-lg py-2 text-white text-sm;
+  }
+  .button-edit {
+    @apply bg-blue px-4 rounded-md py-2 text-white text-sm;
+  }
+  .button-delete {
+    @apply bg-red-600 px-3 rounded-md py-2 text-white text-sm;
   }
   .button-select {
     @apply bg-blue rounded-full py-1 px-2.5 text-white text-sm;
@@ -57,6 +63,10 @@ h4 {
 }
 h5 {
   font-size: 18px;
+  font-weight: 400;
+}
+h6 {
+  font-size: 16px;
   font-weight: 400;
 }
 p {

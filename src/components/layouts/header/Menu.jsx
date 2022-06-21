@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useCategory } from '../../../contexts/CategoryContext';
 
 function Menu() {
-  const { setTrue } = useCategory();
+  const { setFalse } = useCategory();
   const { pathname } = useLocation();
   return (
     <div className="flex gap-20">
@@ -15,9 +15,9 @@ function Menu() {
       <Link
         to="/services"
         className="flex flex-col items-center"
-        onClick={() => setTrue()}
+        onClick={() => setFalse()}
       >
-        <p onClick={() => setTrue()}>Services</p>
+        <p onClick={() => setFalse()}>Services</p>
         {pathname === '/services' && (
           <hr className="bg-white opacity-70 rounded-xl w-10 h-1" />
         )}

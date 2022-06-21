@@ -3,10 +3,10 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const CategoryContext = createContext();
 
 function CategoryContextProvider({ children }) {
-  const [isGrooming, setIsGrooming] = useState(true);
-  const [isShop, setIsShop] = useState(true);
-  const [isHospital, setIsHospital] = useState(true);
-  const [isHotel, setIsHotel] = useState(true);
+  const [isGrooming, setIsGrooming] = useState(false);
+  const [isShop, setIsShop] = useState(false);
+  const [isHospital, setIsHospital] = useState(false);
+  const [isHotel, setIsHotel] = useState(false);
   // console.log(isGrooming, isShop, isHospital, isHotel);
 
   const toggleGrooming = () => {
@@ -37,10 +37,7 @@ function CategoryContextProvider({ children }) {
   };
 
   useEffect(() => {
-    setIsGrooming(true);
-    setIsShop(true);
-    setIsHospital(true);
-    setIsHotel(true);
+    setFalse();
   }, []);
 
   return (
