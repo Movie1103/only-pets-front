@@ -1,4 +1,4 @@
-import { categoryList } from '../../services/categoryList';
+import { categoryList } from "../../services/categoryList";
 
 function HeroInfoCard({ userId, title, src, category, open, close }) {
   const list = categoryList(category);
@@ -19,11 +19,13 @@ function HeroInfoCard({ userId, title, src, category, open, close }) {
           </div>
         </div>
       </div>
-      <img
-        src={src}
-        alt="Service cover"
-        className="max-w-sm rounded-tr-lg rounded-br-lg shadow-lg shadow-neutral-300"
-      />
+      <div className="max-w-sm rounded-tr-lg rounded-br-lg shadow-lg shadow-neutral-300">
+        <img
+          src={src}
+          alt="Service cover"
+          className="h-full bg-cover rounded-br-lg rounded-tr-lg"
+        />
+      </div>
     </div>
   );
 }

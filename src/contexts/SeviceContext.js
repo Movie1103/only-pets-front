@@ -4,14 +4,14 @@ import {
   useContext,
   useEffect,
   useState,
-} from 'react';
+} from "react";
 import {
   deleteServiceById,
   getAllServices,
   getUserServices,
   updateUserService,
-} from '../api/service';
-import { useAuth } from '../contexts/AuthContext';
+} from "../api/service";
+import { useAuth } from "../contexts/AuthContext";
 
 const ServiceContext = createContext();
 

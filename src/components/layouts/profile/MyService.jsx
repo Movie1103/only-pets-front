@@ -1,12 +1,17 @@
-import ServiceCard from '../../../ui/ServiceCard';
-import { useService } from '../../../contexts/SeviceContext';
+import ServiceCard from "../../../ui/ServiceCard";
+import { useService } from "../../../contexts/SeviceContext";
+import { useEffect } from "react";
 
 function MyService() {
-  const { userServices } = useService();
+  const { userServices, fetchUserServices } = useService();
   console.log(userServices);
 
+  useEffect(() => {
+    fetchUserServices();
+  }, [userServices]);
+
   return (
-    <div className="grid grid-cols-3 gap-x-10 gap-y-16 m-20 mx-auto">
+    <div className="grid grid-cols-5 gri gap-x-10 gap-y-16 m-20 mx-auto">
       {userServices?.map(el => (
         <ServiceCard
           key={el.id}
