@@ -11,7 +11,7 @@ function MyService() {
   }, [userServices]);
 
   return (
-    <div className="grid grid-cols-5 gri gap-x-10 gap-y-16 m-20 mx-auto">
+    <div className="grid grid-cols-4 gri gap-x-10 gap-y-16 m-20 mx-auto">
       {userServices?.map(el => (
         <ServiceCard
           key={el.id}
